@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "T-paita",
+    "color": "Musta",
+    "imgPath": "/img/black-shirt.jpg",
+    "price": 9.99
+  },
+  {
+    "id": 2,
+    "name": "T-paita",
+    "color": "Tummansininen",
+    "imgPath": "/img/darkblue-shirt.jpg",
+    "price": 12.99
+  },
+  {
+    "id": 3,
+    "name": "T-paita",
+    "color": "Keltainen",
+    "imgPath": "/img/yellow-shirt.jpg",
+    "price": 12.99
+  },
+  {
+    "id": 4,
+    "name": "T-paita",
+    "color": "Punainen",
+    "imgPath": "/img/red-shirt.jpg",
+    "price": 12.99
+  },
+  {
+    "id": 5,
+    "name": "T-paita",
+    "color": "Vaaleanvihreä",
+    "imgPath": "/img/lightgreen-shirt.jpg",
+    "price": 12.99
+  },
+  {
+    "id": 6,
+    "name": "T-paita",
+    "color": "Valkoinen",
+    "imgPath": "/img/white-shirt.jpg",
+    "price": 9.99
+  }
+]

@@ -1,0 +1,547 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button {
+  font-family: "Questrial", sans-serif;
+  color: var(--text-primary);
+}
+/* Header */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar {
+  z-index: 20;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--background);
+  box-shadow: 0 5px 10px 1px var(--background-secondary);
+}
+.navbar button {
+  border: none;
+  font-size: 1rem;
+  margin: 0;
+  display: block;
+}
+
+.center {
+  width: 100%;
+  max-width: 1380px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.space-between {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.btn-group {
+  display: flex;
+}
+.navbar button {
+  display: block;
+  height: 60px;
+  line-height: 20px;
+  border: none;
+  background-color: var(--background);
+}
+.logo button {
+  font-family: "Questrial", sans-serif;
+  font-size: 1.5rem;
+}
+
+.shirt-icon {
+  margin-top: auto;
+  vertical-align: middle;
+  padding: 0 0 5px 1px;
+}
+.logo button:hover > .shirt-icon {
+  color: var(--green);
+  transition: 0.5s all ease-in-out;
+}
+.links-container {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+.show-links {
+  transform-origin: top;
+  height: 180px;
+  visibility: visible;
+  transition: 0.3s all linear;
+}
+.toggle-btn {
+  padding: 18px;
+  font-size: 24px;
+  visibility: visible;
+  color: var(--text-primary);
+}
+
+.women:hover {
+  color: var(--red);
+  transition: 0.4s linear;
+}
+.men:hover {
+  color: var(--blue);
+  transition: 0.4s linear;
+}
+.kids:hover {
+  color: var(--yellow);
+  transition: 0.4s linear;
+}
+.women .underline {
+  background-color: var(--red);
+}
+.men .underline {
+  background-color: var(--blue);
+}
+.kids .underline {
+  background-color: var(--yellow);
+}
+.account-btn .underline,
+.cart-btn .underline {
+  background-color: var(--green);
+}
+.underline {
+  visibility: hidden;
+  height: 2px;
+  width: 0;
+}
+.links button:hover > .underline {
+  visibility: visible;
+  width: 100%;
+  transition: 0.4s linear;
+  transform-origin: left;
+}
+.links {
+  font-family: "Questrial", sans-serif;
+  margin: 0;
+}
+.links button {
+  text-align: left;
+  width: 100%;
+}
+.links p {
+  margin: 0;
+}
+.uprow {
+  display: flex;
+  align-items: center;
+}
+.account-btn:hover,
+.cart-btn:hover {
+  color: var(--green);
+  transition: 0.5s all ease-in-out;
+}
+.right :hover > .underline {
+  visibility: visible;
+  width: 100%;
+  transition: 0.4s linear;
+  transform-origin: left;
+}
+.account-icon {
+  font-size: 28px;
+  padding: 0 0 0 5px;
+}
+.cart-btn {
+  position: relative;
+}
+.cart-icon {
+  font-size: 28px;
+  padding: 0 0 0 5px;
+}
+.cartCount {
+  font-size: 16px !important;
+  background-color: var(--green);
+  color: white;
+  border-radius: 50%;
+  padding: 0 2px 0 2px;
+  min-width: 15px;
+  right: 0;
+  top: 10px;
+  z-index: 15;
+  position: absolute;
+}
+
+@media screen and (min-width: 700px) {
+  .links-container {
+    height: 60px;
+    transform: scaleY(1);
+    visibility: visible;
+  }
+  .links {
+    display: flex;
+  }
+  li .men,
+  li .women,
+  li .kids {
+    text-align: center;
+    width: 90px;
+    height: 60px;
+    padding: 0 20px 0 20px;
+  }
+  li .account-btn {
+    width: fit-content;
+    height: 60px;
+  }
+  .center {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .toggle-btn {
+    display: flex;
+    flex-direction: row;
+    visibility: hidden;
+    width: 0;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  .links-container {
+    width: auto;
+    position: absolute;
+    top: 60px;
+    z-index: 30;
+  }
+  .show-links {
+    width: 100%;
+    box-shadow: 0 10px 10px 1px var(--background-secondary);
+  }
+}
+@media screen and (max-width: 430px) {
+  .uprow {
+    font-size: 0px !important;
+  }
+}
+/* quick shopping cart */
+.cart-container {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: end;
+  background: rgba(0, 0, 0, 0.5);
+}
+.cart {
+  box-shadow: 4px 4px 10px rgb(175, 175, 175);
+  background-color: #f0f0f0;
+  right: -1000px;
+  border-radius: 20px;
+  margin-top: 65px;
+  min-width: 0;
+  max-width: 100%;
+  width: 0;
+  min-height: 150px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+.cart .product-card {
+  height: fit-content;
+  margin: 0 0 10px 0 !important;
+}
+.cart p {
+  margin-top: 5px !important ;
+}
+.show-cart-container {
+  z-index: 30;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: 0.25s all ease-in-out;
+}
+.cart-btn {
+  width: 80%;
+}
+.show-cart {
+  min-width: 40vw;
+  transform-origin: right;
+  transition: 0.3s all linear;
+}
+
+.ammount-btn {
+  display: flex;
+  align-content: center;
+  margin: 0 0 5px 28px !important;
+  display: flex;
+}
+.ammount-btn button {
+  margin: 0 !important;
+}
+@media screen and (max-width: 1100px) {
+  .show-cart {
+    width: 60vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .show-cart {
+    width: 100vw;
+  }
+}
+
+/* Content */
+main {
+  display: flex;
+  justify-content: center;
+}
+section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section h2 {
+  text-align: center;
+}
+.product-cards {
+  width: 100%;
+  max-width: 1380px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 0 40px 0;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  width: 396px;
+  height: fit-content;
+  margin: 30px;
+  box-shadow: 0 0 10px 4px var(--background-secondary);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+.product-card:hover {
+  box-shadow: 0 0 10px 8px var(--background-secondary);
+  transition: 0.3s all ease-in-out;
+  transform: scale(1.002);
+}
+
+.product-img {
+  border-radius: 10px 10px 0 0;
+  width: 396px;
+  height: 400px;
+  top: 0;
+}
+.card-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 396px;
+  height: fit-content;
+  padding: 0 0 10px 0;
+  border-radius: 10px;
+  background-color: var(--background-primary);
+  border-style: none;
+}
+.product-card p {
+  font-size: 1.1rem;
+  font-family: "Questrial", sans-serif;
+  margin: 30px 0 0 30px;
+}
+.price-container {
+  display: flex;
+}
+.price-container p {
+  margin: 0 0 0 30px;
+}
+.ovh-price {
+  visibility: hidden;
+}
+.show-ovh-price {
+  visibility: visible;
+  text-decoration: red line-through !important;
+  -webkit-text-decoration: red line-through !important;
+}
+.add-cart-btn {
+  align-items: center;
+  align-self: center;
+  font-size: 20px;
+  border-radius: 10px;
+  border-style: none;
+  color: white;
+  justify-content: center;
+  background-color: var(--green);
+  height: 40px;
+  width: 80%;
+  margin: 20px 0 20px 0;
+  box-shadow: 0 0 10px 0.5px var(--background-secondary);
+}
+.add-cart-btn:hover {
+  filter: grayscale(20%);
+  box-shadow: 0 0 10px 2px var(--background-secondary);
+  transition: 0.25s all ease-in-out;
+}
+
+@media screen and (max-width: 400px) {
+  .product-card {
+    width: 100vw;
+    height: fit-content;
+    margin: 30px 0 30px 0;
+  }
+  .product-img {
+    aspect-ratio: 1 / 1;
+    height: auto;
+    width: 100vw;
+  }
+  .product-card button {
+    width: 100vw;
+    height: fit-content;
+  }
+}
+/* Footer */
+.footer {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--background-secondary);
+}
+.footer p {
+  color: var(--text-secondary);
+  margin: 5px;
+}
+.footer button {
+  top: 0;
+  border-style: none;
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
+  margin: 2px;
+  height: 35px;
+  font-size: 1.1rem;
+  border-bottom: solid 2px var(--background-secondary);
+}
+.footer button:hover {
+  transition: 0.4s all ease-in;
+  border-bottom: solid 2px var(--text-secondary);
+}
+/* SignIn Modal */
+.modal {
+  box-shadow: 4px 4px 10px rgb(175, 175, 175);
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  min-width: 290px;
+  height: fit-content;
+  max-width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+}
+.del-btn {
+  align-self: flex-end;
+  border: none;
+  font-size: x-large;
+  margin: 10px 10px 0 10px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.del-btn:hover {
+  color: red;
+  transition: 0.25s all ease-in-out;
+}
+.more-btn {
+  align-self: flex-end;
+  border: none;
+  font-size: x-large;
+  margin: 10px 10px 0 10px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.more-btn:hover {
+  color: green;
+  transition: 0.25s all ease-in-out;
+}
+.btn {
+  background-color: var(--green);
+  box-shadow: 0 0 10px 1px var(--background-secondary);
+  color: white;
+  margin: 20px 0 20px 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+}
+.btn:hover {
+  filter: grayscale(20%);
+  box-shadow: 0 0 10px 2px var(--background-secondary);
+  transition: 0.25s all ease-in-out;
+}
+.show-modal {
+  z-index: 20;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.25s all ease-in-out;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 310px;
+  height: 280px;
+}
+form h3 {
+  margin-top: 0;
+}
+.btn {
+  bottom: 0;
+}
+input {
+  font-size: 16px;
+  margin: 0 2px 10px 2px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.error {
+  min-height: 16px;
+  width: 100%;
+}
+.error p {
+  margin: 0;
+  color: red;
+  text-align: center;
+}
+.logout-btn {
+  background-color: rgb(207, 35, 35);
+}
+.modal h2,
+h3 {
+  margin-top: 0;
+}
+.logged-in p {
+  margin-top: 0;
+  text-decoration: underline;
+}
