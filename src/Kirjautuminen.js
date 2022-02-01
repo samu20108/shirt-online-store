@@ -42,7 +42,6 @@ const Kirjautuminen = ({
   //Check if clicked outside
   const handleClick = (event) => {
     const target = event.target;
-    console.log(target.classList);
     if (target.classList.contains("overlay")) {
       setIsOpen(false);
     } else {

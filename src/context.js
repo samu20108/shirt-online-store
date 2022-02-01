@@ -1,10 +1,4 @@
-import {
-  useState,
-  useContext,
-  createContext,
-  useEffect,
-  useCallback,
-} from "react";
+import { useState, useContext, createContext, useEffect } from "react";
 import productData from "./products.json";
 
 const AppContext = createContext();
@@ -33,7 +27,6 @@ const AppProvider = ({ children }) => {
     } else {
       const newCartItems = cartItems.set(id, 1);
       setCartItems(newCartItems);
-      setItemAmount(itemAmount + 1);
     }
     checkAmount();
   };
@@ -59,8 +52,7 @@ const AppProvider = ({ children }) => {
     products.map((item) => {
       if (cartItems.has(item.id)) {
         const amount = cartItems.get(item.id);
-        newCartTotal += amount * item.price;
-        newCartTotal -= newCartTotal * discountPercentage;
+        newCartTotal += amount * (item.price - item.price * discountPercentage);
       }
       return newCartTotal;
     });

@@ -1,5 +1,5 @@
 import { useGlobalContext } from "./context";
-import { FaTimes, FaPlus, FaMinus } from "react-icons/fa";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 const ProductCard = ({
   id,
