@@ -98,7 +98,7 @@ const Kirjautuminen = ({
   }
   if (loggedIn === true) {
     return (
-      <div className={`${isOpen ? "overlay show-modal" : "overlay"}`}>
+      <div className={`${isOpen ? "overlay show-modal" : "overlay"}`} onClick={handleClick} >
         <div className="logged-in modal">
           <button className="del-btn" onClick={() => setIsOpen(false)}>
             <FaTimes />
