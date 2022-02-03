@@ -17,7 +17,7 @@ const Kirjautuminen = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     //Checks if the input is correct
-    if (usernameInput === "testi" && passwordInput === "testi") {
+    if (usernameInput && passwordInput) {
       setAccountTitle(usernameInput);
       setLoggedIn(true);
       setIsOpen(false);
@@ -103,8 +103,7 @@ const Kirjautuminen = ({
           <button className="del-btn" onClick={() => setIsOpen(false)}>
             <FaTimes />
           </button>
-          <h3>Olet kirjautunut sisään tunnuksella:</h3>
-          <h3>{accountTitle}</h3>
+          <h3>Hei ${accountTitle}!</h3>
           <p>Tilaukset</p>
           <p>Asetukset</p>
           <button className="logout-btn btn" onClick={logout}>
