@@ -103,7 +103,7 @@ const Kirjautuminen = ({
           <button className="del-btn" onClick={() => setIsOpen(false)}>
             <FaTimes />
           </button>
-          <h3>Hei ${accountTitle}!</h3>
+          <h3>Hei {accountTitle}!</h3>
           <p>Tilaukset</p>
           <p>Asetukset</p>
           <button className="logout-btn btn" onClick={logout}>
